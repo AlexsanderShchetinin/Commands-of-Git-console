@@ -33,17 +33,26 @@ b. Ещё раз выполнили git add. Состояние: staged(+ tracke
 7. Повторили пункты 4−7 много-много раз.
 
 
-   • untracked (Untracked files) - неотслеживаемый 
+   • _untracked_ (Untracked files) - неотслеживаемый 
 Когда созданный новый файл еще не добавлен для отслеживания командой git add …
+
+```mermaid
+graph LR;
+  untracked -- "git add" --> staged;
+  staged    -- "git commit -m '...'" --> tracked/comitted;
+
+%% стрелка без текста для примера: 
+  A --> B;
+```
 
 ![img_1.png](img_1.png)
 
-• staged (Changes to be committed в выводе git status) - подготовленный
+• _staged_ (Changes to be committed в выводе git status) - подготовленный
 Такой статус после того, как файл стал отслеживаемым (теперь он готов к коммиту)
 
 ![img_2.png](img_2.png)
 
-• modified (Changes not staged for commit) - измененный
+• _modified_ (Changes not staged for commit) - измененный
 Когда после того как закоммитили файл, в него внесли правки.
 
 ![img_3.png](img_3.png)
